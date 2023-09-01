@@ -1,0 +1,51 @@
+GET http://localhost:3000/
+
+### GET movies
+GET http://localhost:3000/movies
+
+### Get movies by ID
+GET http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+###Get movies by Genre
+GET http://localhost:3000/movies?genre=crime
+
+### Create a movie
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "The godfather",
+    "year": 1975,
+    "director": "Francis Ford Cappola",
+    "duration": 175,
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    "genre": [
+        "Crime",
+        "Drama"
+    ]
+}
+
+### Bad request
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "The godfather",
+    "year": 1975,
+    "director": "Francis Ford Cappola",
+    "duration": 175,
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    "genre": [
+        "Crime",
+        "Drama"
+    ]
+}
+
+### Update a movie
+PATCH http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "year": 2020
+}
+
